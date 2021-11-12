@@ -1,0 +1,88 @@
+<template>
+    <div class="ccForm">
+        <div class="mainContainer">
+            <lightning-spinner alternative-text="Loading" size="large" if:true={submitLoading}></lightning-spinner>
+            <lightning-layout multiple-rows="true" vertical-align="start">
+                <lightning-layout multiple-rows="true" vertical-align="start" class="slds-p-vertical_small">
+                    <lightning-layout-item size="3" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <label class="slds-form-element__label">
+                                <span class="slds-m-right_small">CARD NUMBER</span>
+                            </label>
+                            <lightning-input type="text" onchange={handleCardNumberChange} variant = "label-hidden" 
+                                class="ccInput" data-id="1" value={cardNumberField1} maxlength="4">
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="3" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <lightning-input type="text" onchange={handleCardNumberChange} class="ccInput" data-id="2"
+                                value={cardNumberField2} maxlength="4">
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="3" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <lightning-input type="text" onchange={handleCardNumberChange} class="ccInput" data-id="3"
+                                value={cardNumberField3} maxlength="4">
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="3" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <lightning-input type="text" onchange={handleCardNumberChange} class="ccInput" data-id="4"
+                                value={cardNumberField4} maxlength="4">
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout multiple-rows="false" vertical-align="start" class="slds-p-vertical_small">
+                    <lightning-layout-item size="12" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <label class="slds-form-element__label">
+                                <span class="slds-m-right_small">CARD HOLDER</span>
+                            </label>
+                            <lightning-input type="text" variant = "label-hidden" onchange={handleCardNameChange} class="slds-input_stretch"
+                                value={cardName} pattern="[a-z A-z]+" message-when-pattern-mismatch="Please enter a valid name">
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout multiple-rows="false" vertical-align="start" class="slds-p-vertical_small">
+                    <lightning-layout-item size="4" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <label class="slds-form-element__label">
+                                <span class="slds-m-right_small">EXPIRATION DATE</span>
+                            </label>
+                            <lightning-combobox label="EXPIRATION DATE" variant = "label-hidden"  name="expMon" value={expMon} placeholder="Month"
+                                options={months} onchange={handleCardMonthChange}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <lightning-combobox name="expYear" value={expYear} placeholder="Year" options={years} onchange={handleCardYearChange}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="1" class="slds-p-horizontal_xx-small"></lightning-layout-item>
+                    <lightning-layout-item size="3" class="slds-p-horizontal_xx-small">
+                        <div class="cc-form-element">
+                            <label class="slds-form-element__label">
+                                <span class="slds-m-right_small">CVV</span>
+                            </label>
+                            <lightning-input type="password" label="CVV" onchange={handleCVVChange} value={cardCVV} maxlength="4" variant = "label-hidden">
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout-item size="12" small-device-size="12" class="errorMsg">
+                    <small class="error" if:true={errorMsg}>{errorMsg}</small>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" small-device-size="12" class="slds-p-vertical_small">
+                    <button type="submit" class="slds-button slds-button_brand slds-button_stretch" onclick={handleSubmit} >Submit</button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </div>
+</template>

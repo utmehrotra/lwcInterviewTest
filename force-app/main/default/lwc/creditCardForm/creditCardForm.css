@@ -1,0 +1,23 @@
+.ccForm{
+    width: 360px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #4d4d4d;
+    margin: auto;
+    margin-top: -100px;
+    padding-top: 100px;
+}
+
+.mainContainer{
+    width: 300px;
+    margin: auto;
+}
+
+.slds-form-element__label{
+    font-size: 6px !important;
+    color: #3b3b3b !important;
+}
+
+.errorMsg small{
+    color: red !important;
+}

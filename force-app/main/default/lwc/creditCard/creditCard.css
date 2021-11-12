@@ -1,0 +1,48 @@
+.creditCard{
+    position: relative;
+    height:215px; 
+    width: 300px;
+}
+
+.ccType{
+    position: absolute;
+    width: 50px;
+    right: 5%;
+    top: 15%;
+}
+
+.ccNumber{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+    color: white;
+    text-shadow: 1px 1px 1px #cecece;
+    letter-spacing: 0.8px;
+    width: 100%;
+    text-align: center;
+}
+
+.cardOwner{
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: white;
+}
+
+.cardOwner h2{
+    text-transform: uppercase;
+}
+
+.cardExp{
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    color: white;
+}
+
+.cardLabel{
+    font-size: 6px;
+    color: #cecece;
+}

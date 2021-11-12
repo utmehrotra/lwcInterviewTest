@@ -1,0 +1,14 @@
+<template>
+    <div style={ccBackgroundStyle} class="creditCard">
+        <h4 class="ccNumber">{creditcardnumber}</h4>
+        <img src={cardTypeImage} alt="" if:true={ifCardTypeVisible} class="ccType">
+        <div class="cardOwner">
+            <p class="cardLabel">CARD HOLDER</p>
+            <h2>{cardowner}</h2>
+        </div>
+        <div class="cardExp">
+            <p class="cardLabel">EXPIRED</p>
+            <h2>{cardexp}</h2>
+        </div>
+    </div>
+</template>
